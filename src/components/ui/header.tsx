@@ -27,7 +27,7 @@ export default function Header() {
   ];
 
   return (
-    <header className=" sticky top-0 w-full h-14 pt-2 mb-20 bg-orange-100 dark:bg-slate-700">
+    <header className="relative w-full h-14 z-10 pt-2 pb-20 bg-orange-100 dark:bg-slate-700">
       <nav className="flex flex-row gap-2 justify-between relative">
         <span className="border-b border-black absolute w-11/12 -bottom-3 left-1/2 -translate-x-1/2" />
         <h1 className="text-lg font-medium self-center">Interno</h1>

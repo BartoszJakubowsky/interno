@@ -1,7 +1,8 @@
+
 import "../assets/globals.css";
 import Header from "@/components/ui/header";
 import Head from "./head";
-import Footer from "@/components/ui/footer";
+
 
 // import { Lora } from "next/font/google";
 
@@ -16,16 +17,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     // <html lang="pl" className={lora.variable}>
     <html lang="pl">
       <Head />
       <body
-        className={` bg-orange-100 dark:bg-slate-700 h-fit over container mx-auto px-4 pb-4`}
+        className={` bg-orange-100 dark:bg-slate-700 md:p-8 p-2 container overflow-x-hidden`}
       >
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
