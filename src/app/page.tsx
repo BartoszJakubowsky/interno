@@ -20,8 +20,10 @@ export default function Home() {
   const pageRef = useRef<HTMLDivElement>(null);
   const {pageExit} = usePages();
   if (pageExit && pageRef?.current?.classList) 
-      pageRef.current.classList.add('animateDown');
-
+  {
+    pageRef.current.classList.add('animateDown');
+    // pageRef.current.classList.remove('animateUp');
+  }
   
   const gridRef = useRef<HTMLDivElement>(null);
 

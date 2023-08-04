@@ -36,7 +36,7 @@ export default function Header() {
 
     setTimeout(() => {
       router.push(link)
-      setPageExit(false);
+      // setPageExit(false);
 
     }, 150);
   }

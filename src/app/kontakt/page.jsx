@@ -54,7 +54,7 @@ const labelClassName = 'underline font-medium'
  return (
     <div className='flex flex-wrap w-full h-screen animateUp gap-2'>
 
-        <div className='w-full mx-10 h-fit flex md:justify-center justify-end'>   
+        <div className='w-full mx-10 h-fit flex md:justify-center justify-center'>   
 
         <form className="bg-slate-700 text-white flex gap-2 flex-col w-full h-full mx-10 max-w-[400px] border-4 p-4 border-yellow-700 rounded-sm animateLeft" action={createTodo}>
         <h3 className=' font-medium'>Skontaktuj się z nami</h3>
