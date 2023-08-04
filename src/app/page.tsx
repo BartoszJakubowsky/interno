@@ -18,7 +18,7 @@ export default function Home() {
 
   const firstAnimatedHeader = ['twój dom', 'twoje mieszkanie', 'twoja łazienka']
   const pageRef = useRef();
-  const {pageExit, setPageExit} = usePages();
+  const {pageExit} : {pageExit: boolean} = usePages();
   if (pageExit && pageRef.current) 
       pageRef.current.classList.add('animateDown');
 

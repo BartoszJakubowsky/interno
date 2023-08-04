@@ -1,12 +1,17 @@
 'use client'
 import { createContext, useState } from 'react';
-import type {ReactNode} from 'react';
+import type {ReactNode, Dispatch, SetStateAction} from 'react';
 
-const PagesContext = createContext();
+
+interface ContextProps {
+  pageExit: boolean,
+  setPageExit: Dispatch<SetStateAction<boolean>>
+}
+const PagesContext = createContext<ContextProps>();
 
 export function PagesProvider({children} : {children: ReactNode}) {
 
-  const [pageExit, setPageExit] = useState(false);
+  const [pageExit, setPageExit] = useState<boolean>(false);
   return (
     <PagesContext.Provider value={{ pageExit, setPageExit }}>
       {children}
