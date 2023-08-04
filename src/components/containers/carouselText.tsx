@@ -18,10 +18,10 @@ export default function CarouselText({carouselClassName, elementClassName, swipe
 
 
     const [swipe, setSwipe] = useState(0);
-
     setTimeout(() => {
         if (swipe === elements.length-1)
             return
+
         setSwipe(swipe + 1)
     }, delay);
 

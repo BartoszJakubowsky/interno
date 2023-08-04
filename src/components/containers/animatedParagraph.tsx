@@ -7,12 +7,14 @@ interface AnimatedParagraphProps {
   children: ReactNode;
   className?: string;
   left? : boolean,
+  delay?: number
 }
 
 export default function AnimatedParagraph({
   className,
   children,
   left,
+  delay,
   ...rest
 }: AnimatedParagraphProps) {
   const ref = useRef(null);
@@ -25,7 +27,7 @@ export default function AnimatedParagraph({
       id="target-paragraph"
       initial={{ opacity: 0, x: left? 100: -100, y: 0 }}
       animate={{ opacity: isInView ? 1 : 0, x: isInView && 0, y:isInView && 0 }}
-      transition={{ duration: 0.5, delay: 1, ease: 'easeInOut' }}
+      transition={{ duration: 0.5, delay: delay, ease: 'easeInOut' }}
       {...rest}
     >
       {children}

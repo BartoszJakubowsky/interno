@@ -9,10 +9,18 @@ import AnimatedContainer from "@/components/containers/animatedContainer";
 import {HiChevronRight as ArrowRight, HiChevronLeft as ArrowLeft, HiX as CloseIcon} from "react-icons/hi";
 import Footer from "@/components/ui/footer";
 import Carousel from "@/components/containers/carousel";
+import { useRef } from "react";
+import usePages from "@/hooks/usePages";
 export default function Page() {
 
   const [currentImage, setCurrentImage] = useState(-1);
-  
+    
+    const pageRef = useRef();
+    const {pageExit} = usePages();
+    if (pageExit && pageRef.current) 
+    pageRef.current.classList.add('animateDown');
+
+
     const photos = [
         Bathroom1, Bathroom2, Bathroom3
     ];
@@ -52,7 +60,7 @@ export default function Page() {
     });
   
     return (
-      <AnimatedContainer className="flex flex-wrap justify-center items-start h-screen">
+      <div ref={pageRef} className="flex flex-wrap justify-center items-start h-screen animateUp">
         {photos.map((photo, index) => (
             <Image
             width={600}
@@ -87,6 +95,6 @@ export default function Page() {
           </div>
         )}
         <Footer className="self-end"/>
-      </AnimatedContainer>
+      </div>
     );
 }

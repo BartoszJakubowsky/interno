@@ -9,33 +9,18 @@ interface InfoContainerProps {
 
 export default function InfoContainer({headerText, contentText, image, left = true} : InfoContainerProps) {
     return (
-        <div className={`${left? 'text-left': 'text-right'} h-full w-full`}>
-            <h3 className="relative">
+        <div className={`${left? 'text-left': 'text-right'}`}>
+            <h3 className="relative text-lg text-slate-100 font-semibold">
             {headerText}
-            <span className={`absolute bottom-0 ${left? 'left-0': 'right-0'} w-2/3 border-t-2 border-orange-600`}></span>
+            <span className={`absolute bottom-0 ${left? 'left-0': 'right-0'} w-full border-t-2 border-orange-600`}></span>
             </h3>
-            <div className='flex flex-row w-full h-full overflow-hidden m-2'>
-                <div className={`w-full h-full bg-gray-300 ${left? 'order-first' :'order-last'}`}>
-                <p className='p-2'>
-                    {contentText}
-                </p>
-                </div>
-                <div className='w-full'>
-                <Image placeholder='blur' className='h-fit w-fit mx-8' width={500} height={500} src={image} alt='bob budowniczy' />
-                </div>
+            <div className='md:p-4 flex flex-row mt-2 md:gap-10 gap-4 items-stretch'>
+            <p className={`text-left md:text-lg w-full bg-slate-200 rounded-md p-2 ${left? 'order-first' : 'order-last'}`}>
+                {contentText}
+            </p>
+            <Image  placeholder='blur' className='h-full w-full rounded-md ' width={500} height={500} src={image} alt='keys' />
             </div>
-            {/* <div className='flex flex-row w-full'>
-            <div className='bg-gray-200 h-full w-hull'>
-                <p className='w-full bg-slate-200'>
-            {contentText}
-                </p>
-            </div>
-            {image? 
-            <Image placeholder='blur' className='h-[300px] w-fit mx-8' width={500} height={500} src={image} alt='bob budowniczy' />
-            :
-            false}
-            </div> */}
-            
+                
       </div>
     )
 };

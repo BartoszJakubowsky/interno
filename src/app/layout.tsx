@@ -2,6 +2,7 @@
 import "../assets/globals.css";
 import Header from "@/components/ui/header";
 import Head from "./head";
+import { PagesProvider } from "@/context/PagesContext";
 
 
 // import { Lora } from "next/font/google";
@@ -23,10 +24,12 @@ export default function RootLayout({
     <html lang="pl">
       <Head />
       <body
-        className={` bg-orange-100 dark:bg-slate-700 md:p-8 p-2 container overflow-x-hidden`}
+        className={` bg-orange-100 dark:bg-slate-700 md:p-8 p-2 overflow-x-hidden `}
       >
-        <Header />
-        {children}
+        <PagesProvider>
+          <Header />
+          {children}
+        </PagesProvider>
       </body>
     </html>
   );
