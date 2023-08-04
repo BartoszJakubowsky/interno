@@ -7,7 +7,7 @@ interface ContextProps {
   pageExit: boolean,
   setPageExit: Dispatch<SetStateAction<boolean>>
 }
-const PagesContext = createContext<ContextProps>();
+const PagesContext = createContext<ContextProps>({ pageExit: false, setPageExit: () => {} });
 
 export function PagesProvider({children} : {children: ReactNode}) {
 
