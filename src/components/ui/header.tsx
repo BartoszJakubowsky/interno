@@ -15,7 +15,7 @@ export default function Header() {
   const router = useRouter();
   const linkClassName = "";
   const path = usePathname();
-  const {pageExit, setPageExit} = usePages();
+  const {setPageExit} = usePages();
   const links = [
     { href: "/", label: "O nas", icon: <HomeIcon className={linkClassName} /> },
     {
@@ -30,7 +30,7 @@ export default function Header() {
     },
   ];
 
-  const handleClick = (link) => {
+  const handleClick = (link : string) => {
 
     setPageExit(true);
 

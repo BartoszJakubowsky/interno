@@ -1,10 +1,10 @@
 'use client'
-import {motion as m} from 'framer-motion';
-import { ReactNode, useState, useEffect } from 'react';
+import {MotionValue, motion as m} from 'framer-motion';
+import { ReactNode, useState, useEffect, JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactPortal } from 'react';
 
 interface CarouselProps {
     startPosition : number;
-    elements : string[] | typeof Image[] | ReactNode[]
+    elements : any
     swipeToIndex : number
     swipeDuration? : number
     swipeEase? : string  
@@ -24,7 +24,7 @@ export default function Carousel({ startPosition = 0, elements, swipeToIndex, sw
 
     return (
         <div className={`${className? className : ' absolute inset-0'} flex flex-col flex-wrap  overflow-hidden`}>
-            {elements.map((element, index) => 
+            {elements.map((element: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | MotionValue<number> | MotionValue<string> | null | undefined, index: Key | null | undefined) => 
                 {
                     return (
                     <m.div 
