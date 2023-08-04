@@ -17,12 +17,13 @@ export default function Home() {
 
 
   const firstAnimatedHeader = ['twój dom', 'twoje mieszkanie', 'twoja łazienka']
-  const pageRef = useRef();
-  const {pageExit} : {pageExit: boolean} = usePages();
-  if (pageExit && pageRef.current) 
+  const pageRef = useRef<HTMLDivElement>(null);
+  const {pageExit} = usePages();
+  if (pageExit && pageRef?.current?.classList) 
       pageRef.current.classList.add('animateDown');
 
-    const gridRef = useRef(null);
+  
+  const gridRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
       function handleScroll() {

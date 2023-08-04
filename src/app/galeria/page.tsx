@@ -15,7 +15,7 @@ export default function Page() {
 
   const [currentImage, setCurrentImage] = useState(-1);
     
-    const pageRef = useRef();
+    const pageRef = useRef<HTMLDivElement>(null);
     const {pageExit} = usePages();
     if (pageExit && pageRef.current) 
     pageRef.current.classList.add('animateDown');

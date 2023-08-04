@@ -17,7 +17,7 @@ export default function AnimatedParagraph({
   delay,
   ...rest
 }: AnimatedParagraphProps) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
 
   return (
