@@ -26,7 +26,7 @@ export default function Page() {
     ];
     const iconsClassName = 'hover:text-slate-600 transition-colors duration-200 absolute text-2xl cursor-pointer'
 
-    const openLightbox = (index) => {
+    const openLightbox = (index : number) => {
       setCurrentImage(index);
     };
   
