@@ -32,7 +32,7 @@ export default function Home() {
         if (gridRef.current) {
           // Przesunięcie elementu o klasie 'grid' względem pozycji przewijania
           const scrollY = window.scrollY;
-          gridRef.current.style.transform = `translateY(${scrollY * -1}px)`;
+          gridRef.current.style.transform = `translateY(${scrollY * -0.5}px)`;
         }
       }
   
